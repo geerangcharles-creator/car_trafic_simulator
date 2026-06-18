@@ -1,9 +1,9 @@
-import tkinter as tk
+from traffic.Simulation import Simulation
+from traffic.gui import GUI
 
-root = tk.Tk()
-root.title("simulation routiere")
-root.geometry("800x600")
 
-canvas = tk.Canvas(root, width=800, height=600)
-canvas.pack()
+simulation = Simulation()
 
+gui = GUI(simulation)
+
+gui.run()
