@@ -1,27 +1,20 @@
 import tkinter as tk
 
-
 class GUI:
 
     def __init__(self, simulation):
-
         self.simulation = simulation
-
         self.root = tk.Tk()
-
         self.root.title("Traffic Simulation")
-
         self.canvas = tk.Canvas(
             self.root,
             width=800,
             height=800,
             bg="white"
         )
-
         self.canvas.pack()
 
     def update(self):
-
         self.canvas.delete("all")
 
         self.simulation.roadSystem.drawRoads(
@@ -44,7 +37,5 @@ class GUI:
         )
 
     def run(self):
-
         self.update()
-
         self.root.mainloop()
