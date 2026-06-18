@@ -7,6 +7,7 @@ class Car:
         #ajout de x et y pour dessine les objet a une position
         self.x=0
         self.y=0
+        self.canvasObject= None
 
 
 
@@ -19,6 +20,9 @@ class Car:
         self.height = random.randint(1, 2)
         self.speed = random.randint(10, 30)
         self.crossRoadChangeDirection = random.choice(["straight", "left", "right"])
+        #ajout de la direction
+        self.direction = random.choice(["up", "down", "left", "right"])
+        
 
 
     def printCar(self):
@@ -28,7 +32,12 @@ class Car:
         print("Car speed:", self.speed, "m/s")
 
     def move(self):
+        #la mise ajour qui deplace la voiture
+        self.y += 5
         print("The car is moving at a speed of", self.speed, "m/s")
+        
+        
+
 
 
     def changeSpeed(self, vitesse):
@@ -36,19 +45,19 @@ class Car:
         print("New speed:", self.speed, "m/s")
     
     def turn(self, direction):
+        
         if direction.lower() == "left":
+            self.direction = "left"
             print("Turning left...")
         elif direction.lower() == "right":
+            self.direction = "right"
             print("Turning right...")
         else:
             print("Invalid direction. Please specify 'left' or 'right'.")
     
     
     def changeDirection(self):
-        # we have 3 at the cross-road, so we can change the direction of the car: 
-        # 1. continue straight
-        # 2. take left
-        # 3. take right
+        self.changeDirection= self.crossRoadChangeDirection
         print("Changing direction to:", self.crossRoadChangeDirection)
         
 
@@ -57,3 +66,11 @@ class Car:
         # This function simulates the LIDAR sensor of the car, which scans the environment 
         # and detects obstacles.
         print("Scanning the environment with LIDAR...  ")
+        
+    #fonction qui supprime la voiture de la simulation
+    def isOutOfScreen(self):
+
+        if self.y > 800:
+         return True
+
+        return False
