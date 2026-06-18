@@ -46,3 +46,14 @@ def stopLight():
     redLight = "mettre une couleur rouge vive"
     yellowLight = "mettre une couleur jaune sombre"
     print("Feu rouge")
+
+
+def cautionLight():
+    global redLight, greenLight, yellowLight
+    greenLight = "mettre une couleur verte sombre"
+    redLight = "mettre une couleur rouge sombre"
+    yellowLight = "mettre une couleur jaune vive"
+
+    ## Ici le jaune doit clignoter, 
+    # mais pour l'instant on ne peut pas le faire en console, donc on va juste afficher un message
+    print("Feu jaune")
