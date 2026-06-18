@@ -4,6 +4,11 @@ class Car:
     def __init__(self, color, width, height, speed, crossRoadChangeDirection):
         self.initializeRandomyCar()
         self.move()
+        #ajout de x et y pour dessine les objet a une position
+        self.x=0
+        self.y=0
+
+
 
     def removeCar(self):
         print("Removing the car from the simulation...")
