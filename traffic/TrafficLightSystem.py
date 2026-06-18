@@ -1,4 +1,4 @@
-from traffic import TrafficLight
+from traffic.TrafficLight import TrafficLight
 
 
 class TrafficLightSystem:
