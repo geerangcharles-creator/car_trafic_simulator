@@ -2,17 +2,16 @@ class TrafficLight:
     greenOrRedTime = 30
     yellowTime = 5
 
-    def __init__(self, redLight, greenLight, yellowLight):
+    # On ajoute des valeurs de couleur par défaut pour éviter les plantages à l'initialisation
+    def __init__(self, redLight="darkred", greenLight="darkgreen", yellowLight="goldenrod4"):
         self.__color = "Red"
         self.redLight = redLight
         self.greenLight = greenLight
         self.yellowLight = yellowLight
-        self.x= 500
-        self.y= 300
+        self.x = 500
+        self.y = 300
 
-    
-
-    def drawLight(self,canvas=None):
+    def drawLight(self, canvas=None):
         print("Affichage du feu de circulation")
         print("Couleur du feu : ", self.__color)
         print("Durée du feu vert : ", self.greenOrRedTime, " secondes")
@@ -23,8 +22,8 @@ class TrafficLight:
             canvas.create_rectangle(
                 self.x,
                 self.y,
-                self.x +40,
-                self.y +120,
+                self.x + 40,
+                self.y + 120,
                 fill="black"
             )
             canvas.create_oval(
@@ -49,16 +48,12 @@ class TrafficLight:
                 fill=self.greenLight
             )
 
-
     def authorizeLight(self): 
         self.greenLight = "green"
         self.redLight = "darkred"
         self.yellowLight = "goldenrod4"
         self.__color = "Green"
         print("Feu vert") 
-        
-       
-
 
     def stopLight(self): 
         self.greenLight = "darkgreen"
@@ -67,17 +62,9 @@ class TrafficLight:
         self.__color = "Red"
         print("Feu rouge")
 
-
     def cautionLight(self): 
         self.greenLight = "darkgreen"
         self.redLight = "darkred"
         self.yellowLight = "yellow"
         self.__color = "Yellow"
         print("Feu jaune")
-    #une nouvelle methode    
-    def getColor(self):
-         return self.__color
-    
-        ## Ici le jaune doit clignoter, 
-        # mais pour l'instant on ne peut pas le faire en console, donc on va juste afficher un message
-        

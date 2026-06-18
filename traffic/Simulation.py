@@ -1,16 +1,19 @@
 from traffic import RoadSystem 
+from traffic.TrafficLight import TrafficLight
 from traffic.TrafficLightSystem import TrafficLightSystem
 from traffic.car import Car
+
 
 
 class Simulation:
     def __init__(self):
         print("Initialisation de la simulation")
+       
         self.trafficLightSystem = TrafficLightSystem()
         self.roadSystem = RoadSystem()  
-        self.cars=[]
+       
         self.generateRandomly4CarsEachSecondInEachDirection(5)# Génération aléatoire de 5 voitures par seconde dans chaque direction
-        
+        self.cars=[]
         #avoir deja des voiture sur la route 
         for i in range(5):
             
